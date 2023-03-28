@@ -4,10 +4,13 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: infused-kim
       url-base: https://github.com/infused-kim
+    - name: rluna319
+      url-base: https://github.com/rluna319
   projects:
     - name: zmk
       # remote: infused-kim
-      remote: zmkfirmware
+      # remote: zmkfirmware
+      remote: rluna319
       revision: sofle
       import: app/west.yml
   self:
