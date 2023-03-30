@@ -12,7 +12,7 @@
 /{
     behaviors {
         quentr: quote_enter {
-            compatible = "zmk,behavior-mod-morph"
+            compatible = "zmk,behavior-mod-morph";
             label = "QUOTE_ENTER";
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp ENTER>;
