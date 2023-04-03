@@ -32,7 +32,7 @@
                     &to LOWER   &to RAISE   &kp LCTRL   &kp LGUI    &kp ENTER       &kp SPACE   &mo RAISE   &kp RALT    &kp LBKT    &kp RBKT
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp none none>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp LEFT RIGHT>;
         };
 
         lower_layer {
