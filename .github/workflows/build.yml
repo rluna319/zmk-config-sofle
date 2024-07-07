@@ -71,12 +71,18 @@ jobs:
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
-      - name: ${{ steps.variables.outputs.display-name }} DTS File
+      - name: Save and Display DTS Preprocessed File
         if: ${{ always() }}
         run: |
-          if [ -f "build/zephyr/${{ matrix.board }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp; fi
-          if [ -f "build/zephyr/zephyr.dts" ]; then cat -n build/zephyr/zephyr.dts; fi
-      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
+          if [ -f build/zephyr/${{ matrix.board }}.dts.pre.tmp ]; then
+            cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
+            cp build/zephyr/${{ matrix.board }}.dts.pre.tmp build/artifacts/${{ matrix.board }}.dts.pre.tmp
+          fi
+          if [ -f build/zephyr/zephyr.dts ]; then
+            cat -n build/zephyr/zephyr.dts
+            cp build/zephyr/zephyr.dts build/artifacts/zephyr.dts
+          fi
+      - name: Display Kconfig File
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts
         run: |
