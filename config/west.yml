@@ -2,7 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       # url-base: https://github.com/zmkfirmware
-      url-base: https://github.com/infused-kim/
+      # url-base: https://github.com/infused-kim/
+      url-base: https://github.com/rluna319
   projects:
     - name: zmk
       remote: zmkfirmware
