@@ -43,6 +43,28 @@
     };
 };
 
+&i2c1 {
+    status = "okay";
+    sda-pin = <&gpio0 26>;
+    scl-pin = <&gpio0 26>;
+
+    oled_left: oled@3c {
+        compatible = "ssd1306";
+        reg=<0x3c>;
+        label = "OLED_LEFT";
+        height = <32>;
+        width = <128>;
+    };
+
+    oled_right: oled@3d {
+        compatible = "ssd1306";
+        reg = <0x3d>;
+        label = "OLED_RIGHT";
+        height = <32>;
+        width = <128>;
+    };
+}
+
 / {
     chosen {
         zmk,underglow = &led_strip;
