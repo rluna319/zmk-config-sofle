@@ -46,7 +46,7 @@
 &i2c1 {
     status = "okay";
     sda-pin = <&gpio0 26>;
-    scl-pin = <&gpio0 26>;
+    scl-pin = <&gpio0 27>;
 
     oled_left: oled@3c {
         compatible = "ssd1306";
