@@ -45,7 +45,7 @@
 //    ├───────────────┼────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┬─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┼───────────┤
 //    │    Shift      │   Z    │    X     │    C     │     V     │      B        │    Enter     │    Enter    │      N        │    M      │     ,     │    .     │    /     │   Shift   │
 //    └───────────────┴────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┼─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┴───────────┘
-//                             │  Lower   │  Raise   │   L-Alt   │    L-GUI      │    Enter     │    Space    │    Mo-Raise   │   R-Ctrl  │    [      │    ]     │                       
+//                             │ Mo-Lower │   None   │   L-Alt   │    L-GUI      │    Enter     │    Space    │    Mo-Raise   │   R-Ctrl  │    [      │    ]     │                       
 //                             └──────────┴──────────┴───────────┴───────────────┴──────────────┴─────────────┴───────────────┴───────────┴───────────┴──────────┘                       
 
 
@@ -54,7 +54,7 @@
 &kp TAB         &kp Q       &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P           &plmin
 &kp CAPS        &kp A       &kp S           &kp D           &kp F           &kp G                                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
 &kp LSHFT       &kp Z       &kp X           &kp C           &kp V           &kp B           &kp ENTER       &kp ENTER       &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RSHFT
-                            &tog LOWER      &tog RAISE      &kp LALT        &kp LGUI        &kp ENTER       &kp SPACE       &mo RAISE       &kp RCTRL       &kp LBKT        &kp RBKT >;
+                            &mo LOWER       &none           &kp LALT        &kp LGUI        &kp ENTER       &kp SPACE       &mo RAISE       &kp RCTRL       &kp LBKT        &kp RBKT >;
 
             sensor-bindings = <&rot_kp RIGHT LEFT &rot_kp DOWN UP>;
         };
@@ -69,17 +69,17 @@
 //    ├───────────────┼────────┼──────────┼──────────┼───────────┼───────────────┤                            ├───────────────┼───────────┼───────────┼──────────┼──────────┼───────────┤
 //    │    (trans)    │        │          │          │           │               │                            │      4        │    5      │     6     │          │          │           │
 //    ├───────────────┼────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┬─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┼───────────┤
-//    │    (trans)    │        │          │          │           │               │    (trans)   │   (trans)   │      1        │    2      │     3     │          │          │  (trans)  │
+//    │    (trans)    │        │          │          │           │               │    (trans)   │   (trans)   │      1        │    2      │     3     │    .     │          │  (trans)  │
 //    └───────────────┴────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┼─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┴───────────┘
-//                             │ (trans)  │ (trans)  │ (trans)   │   (trans)     │    (trans)   │   (trans)   │   (trans)     │     0     │ (trans)   │ (trans)  │                       
+//                             │  Lower   │ (trans)  │ (trans)   │   (trans)     │    (trans)   │   (trans)   │   (trans)     │     0     │ (trans)   │ (trans)  │                       
 //                             └──────────┴──────────┴───────────┴───────────────┴──────────────┴─────────────┴───────────────┴───────────┴───────────┴──────────┘                       
 
             bindings = <
-&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                      &kp F6    &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
-&trans    &none     &none     &none       &none     &none                       &kp N7    &kp N8   &kp N9   &none     &none     &kp F12
-&trans    &none     &none     &none       &none     &none                       &kp N4    &kp N5   &kp N6   &none     &none     &none
-&trans    &none     &none     &none       &none     &none     &trans   &trans   &kp N1    &kp N2   &kp N3   &none     &none     &trans
-                    &trans    &trans      &trans    &trans    &trans   &trans   &trans    &kp N0   &trans   &trans >;
+&trans    &kp F1    &kp F2     &kp F3      &kp F4    &kp F5                      &kp F6    &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
+&trans    &none     &none      &none       &none     &none                       &kp N7    &kp N8   &kp N9   &none     &none     &kp F12
+&trans    &none     &none      &none       &none     &none                       &kp N4    &kp N5   &kp N6   &none     &none     &none
+&trans    &none     &none      &none       &none     &none     &trans   &trans   &kp N1    &kp N2   &kp N3   &trans    &none     &trans
+                    &kp LOWER  &trans      &trans    &trans    &trans   &trans   &trans    &kp N0   &trans   &trans >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
@@ -95,15 +95,15 @@
 //    ├───────────────┼────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┬─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┼───────────┤
 //    │   (trans)     │  Undo  │   Cut    │   Copy   │   Paste   │               │   (trans)    │   (trans)   │               │           │           │          │    \     │  (trans)  │
 //    └───────────────┴────────┼──────────┼──────────┼───────────┼───────────────┼──────────────┼─────────────┼───────────────┼───────────┼───────────┼──────────┼──────────┴───────────┘
-//                             │  (trans) │  (trans) │  (trans)  │   (trans)     │   (trans)    │   (trans)   │   (trans)     │  (trans)  │  (trans)  │ (trans)  │                       
+//                             │  (trans) │ Ctrl^Del │  (trans)  │   (trans)     │   (trans)    │   (trans)   │   (trans)     │  (trans)  │  (trans)  │ (trans)  │                       
 //                             └──────────┴──────────┴───────────┴───────────────┴──────────────┴─────────────┴───────────────┴───────────┴───────────┴──────────┘                       
 
             bindings = <
-&trans     &none        &none        &none        &none        &none                    &none     &none                 &none       &none               &none       &kp DEL 
-&trans     &none        &none        &none        &none        &none                    &none     &kp C_AC_ZOOM_OUT     &kp UP      &kp C_AC_ZOOM_IN    &none       &kp PIPE
-&trans     &none        &none        &none        &none        &none                    &kp HOME  &kp LEFT              &kp DOWN    &kp RIGHT           &kp END     &kp GRAVE
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &none   &trans   &trans  &none     &none                 &none       &none               &kp BSLH    &trans
-                        &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans                &trans      &trans >;
+&trans     &kp F1       &kp F2       &kp F3                     &kp F4       &kp F5                   &kp F6    &kp F7                &kp F8      &kp F9              &kp F10     &kp DEL
+&trans     &kp F11      &kp F12      &none                      &none        &none                    &none     &kp C_AC_ZOOM_OUT     &kp UP      &kp C_AC_ZOOM_IN    &none       &kp PIPE
+&trans     &none        &none        &none                      &none        &none                    &kp HOME  &kp LEFT              &kp DOWN    &kp RIGHT           &kp END     &kp GRAVE
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY                 &kp K_PASTE  &none   &trans   &trans  &none     &none                 &none       &none               &kp BSLH    &trans
+                        &trans       &kp LCTRL(LALT(DEL))       &trans       &trans  &trans   &trans  &trans    &trans                &trans      &trans >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
